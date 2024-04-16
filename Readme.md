@@ -8,9 +8,10 @@ Uses test driven development without using any testing framework.
 ~~navigate to root folder~~
 ~~run node test.js~~
 
-run test
+to run test, navigate to root folder run following command
 ---
 
-npx jest
+`npx jest`
+
 This will look through all files that end with ".test.js" and execute test in it.
 
