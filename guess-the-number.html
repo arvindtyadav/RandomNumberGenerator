@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .square {
+            width: 130px;
+            height: 130px;
+            background-color: lightgray;
+            line-height: 130px;
+            font-size: 40px;
+            margin-top: 20px;
+            text-align: center;
+            /* display: block; Initially hide */
+        }
+
+        .square-button {
+            width: 130px;
+            height: 130px;
+            background-color: lightgray;
+            line-height: 130px;
+            font-size: 25px;
+            margin-top: 20px;
+            text-align: center;
+            /* display: block; Initially hide */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="newGameButton">New Game (Guess the number)</button>
+        <div id="header">
+            <input class="square" id="numberOne" value="?"></input>
+            <input class="square" id="numberTwo" value="?"></input>
+            <input class="square" id="numberThree" value="?"></input>
+            <input class="square" id="numberFour" value="?"></input>
+            <input type="button" class="square-button" id="show" value="Show"></input>
+        </div>
+        <div id="rowOne">
+            <input class="square" id="rowOneNumberOne" value=""></input>
+            <input class="square" id="numberTwo" value=""></input>
+            <input class="square" id="numberThree" value=""></input>
+            <input class="square" id="numberFour" value=""></input>
+            <input type="button" id="rowOneCheckButton" class="square-button" value="Check"></input>
+        </div>
+    </div>
+
+    <script src="random-number-generator.js"></script>
+    <script>
+        var currentNumber = 0;
+        const newGameButton = document.getElementById('newGameButton');
+        newGameButton.addEventListener('click', () => {
+            const randomNumber = generateFourDigitNonRepeatingNumber();
+            currentNumber = randomNumber;
+            console.log(randomNumber);
+        });
+
+        const rowOneCheckButton = document.getElementById('rowOneCheckButton');
+        rowOneCheckButton.addEventListener('click', () => {
+            console.log("called row1 check")
+            console.log(currentNumber);
+        });
+    </script>
+</body>
+</html>
